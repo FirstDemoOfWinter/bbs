@@ -4,12 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SummerWarApplication {
+public class QnbbsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SummerWarApplication.class, args);
+        SpringApplication.run(QnbbsApplication.class, args);
 
-        System.out.printf("进程启动！！！");
+        System.out.printf("进程启动！！！"+"\n");
 
     }
 }
