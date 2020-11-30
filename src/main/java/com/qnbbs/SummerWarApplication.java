@@ -1,4 +1,4 @@
-package com.summerwar;
+package com.qnbbs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

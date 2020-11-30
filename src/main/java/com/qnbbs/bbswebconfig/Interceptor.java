@@ -1,4 +1,4 @@
-package com.summerwar.bbswebconfig;
+package com.qnbbs.bbswebconfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;

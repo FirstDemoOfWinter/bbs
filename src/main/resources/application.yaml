@@ -1,6 +1,12 @@
 spring:
   profiles:
     active: test
+  datasource:
+    url: jdbc:mysql://localhost:3306/qnbbs
+    data-username: root
+    data-password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
 ---
 #测试环境配置
 spring:

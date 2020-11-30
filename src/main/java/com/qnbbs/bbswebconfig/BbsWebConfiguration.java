@@ -1,4 +1,4 @@
-package com.summerwar.bbswebconfig;
+package com.qnbbs.bbswebconfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -23,6 +23,7 @@ public class BbsWebConfiguration extends WebMvcConfigurationSupport {
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new Interceptor())
                 .addPathPatterns("/**")
+                .excludePathPatterns("/")
                 .excludePathPatterns("/login")
                 .excludePathPatterns("/index")
                 //静态资源路径开放

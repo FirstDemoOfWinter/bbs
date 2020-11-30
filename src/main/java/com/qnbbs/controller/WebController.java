@@ -1,4 +1,4 @@
-package com.summerwar.controller;
+package com.qnbbs.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ public class WebController {
     @RequestMapping({"/index","/"})
     public String index(){
         System.out.printf("---访问首页"+"\n");
-        return "/index";
+        return "index";
     }
 
     //登录
