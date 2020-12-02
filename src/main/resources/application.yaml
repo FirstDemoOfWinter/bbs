@@ -6,7 +6,9 @@ spring:
     data-username: root
     data-password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.qnbbs.obj
 ---
 #测试环境配置
 spring:

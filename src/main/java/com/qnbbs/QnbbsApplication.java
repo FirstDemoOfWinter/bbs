@@ -1,8 +1,10 @@
 package com.qnbbs;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@MapperScan("com.qnbbs.service")
 @SpringBootApplication
 public class QnbbsApplication {
 

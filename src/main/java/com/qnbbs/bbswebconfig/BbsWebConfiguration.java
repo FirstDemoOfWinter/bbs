@@ -14,7 +14,8 @@ public class BbsWebConfiguration extends WebMvcConfigurationSupport {
         //将路径static/** 映射到 /static/
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/")
-                .addResourceLocations("classpath:/static/img/");
+                .addResourceLocations("classpath:/static/img/")
+                .addResourceLocations("classpath:/css/","classpath:/js/","classpath:/fonts/");
         super.addResourceHandlers(registry);
     }
 
@@ -26,8 +27,11 @@ public class BbsWebConfiguration extends WebMvcConfigurationSupport {
                 .excludePathPatterns("/")
                 .excludePathPatterns("/login")
                 .excludePathPatterns("/index")
+                .excludePathPatterns("/login.html")
+                .excludePathPatterns("/register.html")
                 //静态资源路径开放
-                .excludePathPatterns("/**/*.png","/**/*.jpg","/**/*.gif","/**.ico");
+                .excludePathPatterns("/**/*.png","/**/*.jpg","/**/*.gif","/**.ico")
+                .excludePathPatterns("/css/**","/js/**","/fonts/**");
         super.addInterceptors(registry);
     }
 }

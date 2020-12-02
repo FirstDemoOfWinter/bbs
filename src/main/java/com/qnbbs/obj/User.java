@@ -5,6 +5,8 @@ import java.util.Date;
 //用户信息
 public class User {
 
+    //主ID
+    private int id;
     //uid
     private Integer uid;
     //账号
@@ -14,7 +16,7 @@ public class User {
     //昵称
     private String nick;
     //邮箱地址
-    private String Email;
+    private String email;
     //注册时间
     private Date date;
     //手机号
@@ -24,6 +26,15 @@ public class User {
     //头像地址
     private String imgUrl;
 
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNick() {
         return nick;
@@ -58,11 +69,11 @@ public class User {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        email = email;
     }
 
     public Date getDate() {
