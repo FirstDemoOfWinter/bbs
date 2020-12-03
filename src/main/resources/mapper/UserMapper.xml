@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--绑定接口文件-->
-<mapper namespace="com.qnbbs.service.LoginSverice">
+<mapper namespace="com.qnbbs.service.LoginService">
 
     <!--数据绑定-->
     <resultMap id="BaseResultMap" type="com.qnbbs.obj.User">
@@ -17,15 +17,15 @@
         <result column="imgUrl" jdbcType="VARCHAR" property="imgUrl" />
     </resultMap>
     <!--登录业务查询-->
-    <select id="login" resultType="com.qnbbs.obj.User">
-        select * from user where username = #{username}
+    <select id="getPassWord" resultType="com.qnbbs.obj.User">
+        select * from user where userName = #{userName}
     </select>
     <!--注册业务提交-->
     <insert id="register">
-        inster into user(
-        uid,userName,passWord,nick,email,date,numberPhone,gender,imgUrl
+        insert into user(
+        userName,passWord,nick,email,numberPhone
         ) values
-        (#{uid},#{userName},#{passWord},#{nick},#{email},#{date},#{numberPhone},#{gender},#{imgUrl})
+        (#{userName},#{passWord},#{nick},#{email},#{numberPhone});
     </insert>
 
 </mapper>

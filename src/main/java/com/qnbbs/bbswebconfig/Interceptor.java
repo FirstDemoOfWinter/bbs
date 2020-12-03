@@ -15,16 +15,11 @@ public class Interceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.printf("---拦截器："+request.getServletPath().toString()+"\n");
         //获取用户名密码
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        //若密码正确
-        if("wangergou".equals(username)&&"123456".equals(password)){
-            System.out.printf("账号密码正确，继续访问"+"\n");
-            return true;
-        }else{
-            System.out.printf("账号密码错误，请重新输入"+"\n");
-            return false;
-        }
+        String username = request.getParameter("userName");
+        String password = request.getParameter("passWord");
+        System.out.printf("username:"+username);
+        System.out.printf("password:"+password);
+        return true;
 
     }
 }

@@ -27,6 +27,7 @@ public class BbsWebConfiguration extends WebMvcConfigurationSupport {
                 .excludePathPatterns("/")
                 .excludePathPatterns("/login")
                 .excludePathPatterns("/index")
+                .excludePathPatterns("/do/register")
                 .excludePathPatterns("/login.html")
                 .excludePathPatterns("/register.html")
                 //静态资源路径开放

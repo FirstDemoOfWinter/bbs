@@ -121,14 +121,14 @@
 							<!-- 登录 -->
 								<div class="tab-pane fade show active ml-4" id="list-login" role="tabpanel" aria-labelledby="list-login-list">
 									<div>
-										<form action="">
+										<form action="/do/login" method="get">
 											<!-- 账号 -->
 											<div class=" form-group form-row">
 												<div class="col-3">
 													<label for="inputUsername" class="loginFontSize">账号</label>
 												</div>
 												<div class="col-7">
-													<input type="" class="form-control float-right" style="display: inline-block;" id="inputUsername">
+													<input type="text" class="form-control float-right" style="display: inline-block;" id="inputUsername" name="userName">
 												</div>
 											</div>
 											<!-- 密码 -->
@@ -137,7 +137,7 @@
 													<label for="inputPassword" class="loginFontSize">密码</label>
 												</div>
 												<div class="col-7">
-													<input type="text" class="form-control float-right" style="display: inline-block;" id="inputPassword">
+													<input type="text" class="form-control float-right" style="display: inline-block;" id="inputPassword" name="passWord">
 												</div>
 											</div>
 										</form>
@@ -151,14 +151,14 @@
 								<!--没有账号 注册 -->
 								<div class="tab-pane fade" id="list-register" role="tabpanel" aria-labelledby="list-register-list">
 									<div class="tab-content ml-4" id="nav-tabContent">
-												<form>
+												<form action="/do/register">
 													<!-- 账号 -->
 													<div class=" form-group form-row">
 														<div class="col-3">
 															<label for="inputUsername1" class="loginFontSize">账号</label>
 														</div>
 														<div class="col-7">
-															<input type="text" class="form-control float-right" style="display: inline-block;" id="inputUsername1">
+															<input type="text" class="form-control float-right" style="display: inline-block;" id="inputUsername1" name="userName">
 														</div>
 													</div>
 													<!-- 密码 -->
@@ -167,7 +167,16 @@
 															<label for="inputPassword1" class="loginFontSize">密码</label>
 														</div>
 														<div class="col-7">
-															<input type="text" class="form-control float-right" style="display: inline-block;" id="inputPassword1">
+															<input type="text" class="form-control float-right" style="display: inline-block;" id="inputPassword1" name="passWord">
+														</div>
+													</div>
+													<!--nick-->
+													<div class=" form-group form-row">
+														<div class="col-3">
+															<label for="inputPassword1" class="loginFontSize">nick</label>
+														</div>
+														<div class="col-7">
+															<input type="text" class="form-control float-right" style="display: inline-block;" id="nick" name="nick">
 														</div>
 													</div>
 													<!-- 性别 -->
@@ -177,19 +186,19 @@
 														</div>
 														<div class="col-7">
 															<select id="inputxb" class="form-control" >
-																<option selected>请选择</option>
-																<option>女</option>
-																<option>男</option>
+																<option selected name="gender" value="0">请选择</option>
+																<option name="gender" value="1">女</option>
+																<option name="gender" value="2">男</option>
 															</select>
 														</div>
 													</div>
-													<!--地址 -->
+													<!--手机号 -->
 													<div class="form-group form-row">
 														<div class="col-3">
-															<label for="inputCity" class="loginFontSize">地址</label>
+															<label for="inputCity" class="loginFontSize">手机</label>
 														</div>
 														<div class="col-7">
-															<input type="text" class="form-control" id="inputCity">
+															<input type="text" class="form-control" id="inputCity" name="numberPhone">
 														</div>
 													</div>
 													<!-- 邮箱 -->
@@ -198,30 +207,16 @@
 															<label for="inputEmial" class="loginFontSize">Email</label>
 														</div>
 														<div class="col-7">
-															<input type="email" class="form-control" id="inputEmial">
+															<input type="email" class="form-control" id="inputEmial" name="email">
 														</div>
 													</div>
-													<!-- 职业 -->
-													<div class="form-group form-row">
-														<div class="col-3">
-															<label for="inputState" class="loginFontSize">职 业</label>
-														</div>
-														<div class="col-7">
-															<select id="inputState" class="form-control">
-																<option selected>请选择</option>
-																<option>自由职业</option>
-																<option>在校学生</option>
-																<option>家庭主妇</option>
-																<option>在职人员</option>
-															</select>
-														</div>
+													<div class="col-12 mt-5">
+														<button type="button" class="btn btn-success col-4" >登录</button>
+														<button type="submit" class="btn btn-primary col-4 ml-5">注册</button>
 													</div>
 												</form>
 												<!-- 登录注册 -->
-												<div class="col-12 mt-5">
-													<button type="button" class="btn btn-success col-4" >登录</button>
-													<button type="button" class="btn btn-primary col-4 ml-5">注册</button>
-												</div>
+
 									</div>
 								</div>
 						</div>
