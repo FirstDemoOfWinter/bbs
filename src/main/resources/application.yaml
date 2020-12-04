@@ -1,14 +1,30 @@
 spring:
   profiles:
     active: test
+#数据库配置
   datasource:
     url: jdbc:mysql://localhost:3306/qnwb
     username: root
     password: 123456
     driverClassName: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: utf-8
+    mode: HTML
+#mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.qnbbs.obj
+  spring:
+    http:
+      encoding:
+        force: true
+        charset: utf-8
+        enabled: true
+#thymeleaf配置
 ---
 #测试环境配置
 spring:

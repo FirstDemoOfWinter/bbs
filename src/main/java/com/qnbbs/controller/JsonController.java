@@ -15,6 +15,12 @@ public class JsonController {
     @Autowired
     private LoginService service;
 
+
+    @RequestMapping("/test")
+    public String test(){
+        return "测试";
+    }
+
     //登录业务
     @RequestMapping("/login")
     public String login(@RequestParam("userName")String userName,@RequestParam("passWord")String passWord){
@@ -31,13 +37,15 @@ public class JsonController {
     //注册业务
     @RequestMapping("/register")
     public String register(@RequestParam("userName")String userName,@RequestParam("passWord")String passWord,@RequestParam("nick")String nick,@RequestParam("email")String email,@RequestParam("numberPhone")String numberPhone){
-        System.out.printf("开始注册");
+        System.out.printf("开始注册"+"\n");
        Integer i = service.register(userName,passWord,nick,email,numberPhone);
         if(i!=0){
             //注册成功
+            System.out.printf("注册成功"+"\n");
             return "注册成功";
         }else{
             //注册失败
+            System.out.printf("注册失败"+"\n");
             return "注册失败";
         }
 
