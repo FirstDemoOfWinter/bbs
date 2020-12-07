@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface LoginService {
 
     //登录业务
-    User getPassWord(String userName);
+    User loginService(String userName,String passWord);
     //注册业务
     Integer register(String userName,String passWord,String nick,String email,String numberPhone);
 }

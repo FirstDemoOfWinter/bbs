@@ -17,8 +17,8 @@
         <result column="imgUrl" jdbcType="VARCHAR" property="imgUrl" />
     </resultMap>
     <!--登录业务查询-->
-    <select id="getPassWord" resultType="com.qnbbs.obj.User">
-        select * from user where userName = #{userName}
+    <select id="loginService" resultType="com.qnbbs.obj.User">
+        select * from user where userName = #{userName} and passWord = #{passWord}
     </select>
     <!--注册业务提交-->
     <insert id="register">

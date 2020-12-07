@@ -4,9 +4,13 @@ package com.qnbbs.controller;
 import com.qnbbs.obj.User;
 import com.qnbbs.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 @RequestMapping("/do")
 @RestController
@@ -23,14 +27,16 @@ public class JsonController {
 
     //登录业务
     @RequestMapping("/login")
-    public String login(@RequestParam("userName")String userName,@RequestParam("passWord")String passWord){
+    public String login(@RequestParam("userName")String userName, @RequestParam("passWord")String passWord, HttpSession s){
         //获取用户密码
-        User u = service.getPassWord(userName);
-        if(u.getPassWord().equals(passWord)){
+        User u = service.loginService(userName,passWord);
+        if(u!=null){
             //若密码一致
-            return "11";
+            s.setAttribute("user",u);
+            return "登录成功";
         }else{
-            return "22";
+
+            return "注册失败";
         }
     }
 
