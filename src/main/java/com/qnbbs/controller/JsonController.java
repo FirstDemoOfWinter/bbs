@@ -33,10 +33,11 @@ public class JsonController {
         if(u!=null){
             //若密码一致
             s.setAttribute("user",u);
+            System.out.printf("登录成功"+"\n");
             return "登录成功";
         }else{
-
-            return "注册失败";
+            System.out.printf("登录失败"+"\n");
+            return "登录失败";
         }
     }
 
