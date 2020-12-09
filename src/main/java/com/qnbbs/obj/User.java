@@ -20,7 +20,7 @@ public class User {
     //注册时间
     private Date date;
     //手机号
-    private Integer numberPhone;
+    private String numberPhone;
     //性别
     private int gender;
     //头像地址
@@ -73,7 +73,7 @@ public class User {
     }
 
     public void setEmail(String email) {
-        email = email;
+        this.email = email;
     }
 
     public Date getDate() {
@@ -84,11 +84,11 @@ public class User {
         this.date = date;
     }
 
-    public Integer getNumberPhone() {
+    public String getNumberPhone() {
         return numberPhone;
     }
 
-    public void setNumberPhone(Integer numberPhone) {
+    public void setNumberPhone(String numberPhone) {
         this.numberPhone = numberPhone;
     }
 
@@ -106,5 +106,21 @@ public class User {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", uid=" + uid +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", nick='" + nick + '\'' +
+                ", email='" + email + '\'' +
+                ", date=" + date +
+                ", numberPhone=" + numberPhone +
+                ", gender=" + gender +
+                ", imgUrl='" + imgUrl + '\'' +
+                '}';
     }
 }

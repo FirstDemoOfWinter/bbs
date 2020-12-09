@@ -45,7 +45,38 @@
 				//动态图片
 				setInterval(hero,2000);
 			}
-			
+			//form表单提交
+			function login(){
+				$.ajax({
+					type:"POST",//方法类型
+					dataType:"json",//预期服务器返回数据类型
+					url:"/do/login",//url
+					data:$("#login-form").serialize(),
+					success:function (result) {
+						console.log(result)
+						alert(user.username);
+					},
+					error:function (result) {
+					}
+				})
+			}
+			//form注册提交
+			function  register() {
+				$.ajax({
+					type:"POST",
+					dataType: "json",
+					url:"/do/register",
+					data:$("#register-form").serialize(),
+					success:function (result) {
+						console.log(result)
+						alert(result);
+					},
+					error:function () {
+						alert(result.message)
+					}
+				})
+
+			}
 			//动态图片
 			function hero(){
 				var left = parseInt($("#hero").css("left"));
@@ -121,7 +152,7 @@
 							<!-- 登录 -->
 								<div class="tab-pane fade show active ml-4" id="list-login" role="tabpanel" aria-labelledby="list-login-list">
 									<div>
-										<form action="/do/login">
+										<form id="login-form" method="post">
 											<!-- 账号 -->
 											<div class=" form-group form-row">
 												<div class="col-3">
@@ -142,7 +173,8 @@
 											</div>
 											<!-- 登录注册 -->
 											<div class="col-12 mt-5">
-												<button type="submit" class="btn btn-success col-4" >登录</button>
+												<button type="btton" class="btn btn-success col-4" onclick="login()">登录</button>
+												<button type="button" class="btn btn-primary col-4 ml-5" onclick="location='/login.html#list-register'">注册</button>
 											</div>
 										</form>
 									</div>
@@ -150,7 +182,7 @@
 								<!--没有账号 注册 -->
 								<div class="tab-pane fade" id="list-register" role="tabpanel" aria-labelledby="list-register-list">
 									<div class="tab-content ml-4" id="nav-tabContent">
-												<form action="/do/register">
+												<form id="register-form" method="post">
 													<!-- 账号 -->
 													<div class=" form-group form-row">
 														<div class="col-3">
@@ -210,8 +242,8 @@
 														</div>
 													</div>
 													<div class="col-12 mt-5">
-														<button type="button" class="btn btn-success col-4" >登录</button>
-														<button type="submit" class="btn btn-primary col-4 ml-5">注册</button>
+														<button type="button" class="btn btn-success col-4" onclick="location='/login.html#list-login'">登录</button>
+														<button type="button" class="btn btn-primary col-4 ml-5" onclick="register()">注册</button>
 													</div>
 												</form>
 												<!-- 登录注册 -->
